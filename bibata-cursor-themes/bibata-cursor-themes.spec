@@ -16,6 +16,7 @@ BuildArch:      noarch
 BuildRequires:  nodejs
 BuildRequires:  yarnpkg
 BuildRequires:  python3
+BuildRequires:  python3-pip
 BuildRequires:  libX11-xcb
 BuildRequires:  gtk3
 BuildRequires:  nss
