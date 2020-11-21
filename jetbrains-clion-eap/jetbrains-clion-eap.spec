@@ -12,7 +12,7 @@ URL:            https://www.jetbrains.com/clion
 Source0:        https://download.jetbrains.com/cpp/CLion-%{version}.tar.gz
 Source1:        %{name}.desktop
 
-BuildArch:      x86_64
+#BuildArch:      x86_64
 
 BuildRequires:  rsync
 Requires:       python3
