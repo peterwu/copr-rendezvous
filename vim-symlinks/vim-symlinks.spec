@@ -4,7 +4,6 @@ Release:        1%{?dist}
 
 Summary:        Symlinks for vim
 License:        MIT
-#Source0:        nothing
 
 BuildArch:      noarch
 

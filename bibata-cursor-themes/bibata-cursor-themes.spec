@@ -17,6 +17,7 @@ BuildRequires:  nodejs
 BuildRequires:  yarnpkg
 BuildRequires:  python3
 BuildRequires:  python3-pip
+BuildRequires:  python3-virtualenv
 BuildRequires:  libX11-xcb
 BuildRequires:  gtk3
 BuildRequires:  nss
@@ -31,8 +32,6 @@ OpenSource, Compact and Material Designed Cursor Set
 %setup -n %{source_name}-%{version}
 
 %build
-python3 -m pip install --upgrade pip                 # Update pip to latest
-python3 -m pip install virtualenv                    # Install python virtual environment
 virtualenv venv                                      # Create new virtualenv named `venv`
 source venv/bin/activate                             # Activate virtualenv
 yarn install                                         # Install all Node Packages
