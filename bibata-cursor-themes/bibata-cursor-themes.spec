@@ -13,7 +13,7 @@ Source0:        %{url}/archive/v%{version}.tar.gz
 
 BuildArch:      noarch
 
-BuildRequires:  nodejs
+BuildRequires:  npm
 BuildRequires:  yarnpkg
 BuildRequires:  python3
 BuildRequires:  python3-pip
