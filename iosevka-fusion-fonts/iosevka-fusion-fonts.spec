@@ -14,6 +14,7 @@ Source1:        iosevka-fusion.toml
 
 BuildArch:      noarch
 
+BuildRequires:  clang
 BuildRequires:  npm
 BuildRequires:  ttfautohint
 
