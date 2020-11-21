@@ -84,4 +84,4 @@ done
 
 %changelog
 * Thu Nov 19 11:34:41 EST 2020 Peter Wu <peterwu@hotmail.com>
-- 
+- New Release - v1.0.0
