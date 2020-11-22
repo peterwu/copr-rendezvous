@@ -1,6 +1,5 @@
 %global         source_name clion
 %global         debug_package %{nil}
-%undefine       _disable_source_fetch
 
 Name:           jetbrains-clion-eap
 Version:        203.5981.40
@@ -11,8 +10,6 @@ License:        Custom. Refer to /opt/jetbrains/clion-eap/license for details.
 URL:            https://www.jetbrains.com/clion
 Source0:        https://download.jetbrains.com/cpp/CLion-%{version}.tar.gz
 Source1:        %{name}.desktop
-
-BuildArch:      x86_64
 
 Requires:       python3
 Requires:       bash
@@ -28,7 +25,7 @@ JetBrains' cross platform C/C++ IDE.
 30-day evaluation.
 
 %prep
-%setup -n %{source_name}-%{version}
+%autosetup -n %{source_name}-%{version}
 
 %build
 %{__rm} -rf %{_builddir}/%{source_name}-%{version}/jbr
