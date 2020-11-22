@@ -3,7 +3,7 @@
 
 Name:           jetbrains-clion-eap
 Version:        203.5981.40
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        JetBrains' C/C++ IDE. 30-day evaluation.
 
 License:        Custom. Refer to /opt/jetbrains/clion-eap/license for details.
