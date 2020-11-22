@@ -8,8 +8,8 @@ Release:        1%{?dist}
 Summary:        JetBrains' C/C++ IDE. 30-day evaluation.
 
 License:        Custom. Refer to /opt/jetbrains/clion-eap/license for details.
-URL:            https://www.jetbrains.com/clion
-Source0:        https://download.jetbrains.com/cpp/CLion-%{version}.tar.gz
+URL:            https://download.jetbrains.com/cpp
+Source0:        %{url}/CLion-%{version}.tar.gz
 Source1:        %{name}.desktop
 
 #BuildArch:      x86_64
