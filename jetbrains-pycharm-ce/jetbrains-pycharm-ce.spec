@@ -1,6 +1,5 @@
 %global         source_name pycharm-community
 %global         debug_package %{nil}
-%undefine       _disable_source_fetch
 
 Name:           jetbrains-pycharm-ce
 Version:        2020.2.3
@@ -9,7 +8,7 @@ Summary:        JetBrain PyCharm Community Edition
 
 License:        ASL2.0
 URL:            https://www.jetbrains.com/pycharm
-Source0:        https://download.jetbrains.com/python/pycharm-community-%{version}.tar.gz
+Source0:        https://download.jetbrains.com/python/%{source_name}-%{version}.tar.gz
 Source1:        %{name}.desktop
 
 BuildArch:      x86_64
@@ -24,7 +23,7 @@ Requires:       libgcc
 JetBrain PyCharm Community Edition
 
 %prep
-%setup -n %{source_name}-%{version}
+%autosetup -n %{source_name}-%{version}
 
 %build
 %{__rm} -rf %{_builddir}/%{source_name}-%{version}/jbr
