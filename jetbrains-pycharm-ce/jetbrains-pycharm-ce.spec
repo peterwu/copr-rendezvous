@@ -12,7 +12,6 @@ URL:            https://www.jetbrains.com/pycharm
 Source0:        https://download.jetbrains.com/python/pycharm-community-%{version}.tar.gz
 Source1:        %{name}.desktop
 
-BuildRequires:  rsync
 Requires:       python3
 Requires:       bash
 Requires:       java

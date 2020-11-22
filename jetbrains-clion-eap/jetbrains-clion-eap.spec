@@ -8,13 +8,12 @@ Release:        1%{?dist}
 Summary:        JetBrains' C/C++ IDE. 30-day evaluation.
 
 License:        Custom. Refer to /opt/jetbrains/clion-eap/license for details.
-URL:            https://download.jetbrains.com/cpp
-Source0:        %{url}/CLion-%{version}.tar.gz
+URL:            https://www.jetbrains.com/clion
+Source0:        https://download.jetbrains.com/cpp/CLion-%{version}.tar.gz
 Source1:        %{name}.desktop
 
-#BuildArch:      x86_64
+BuildArch:      x86_64
 
-BuildRequires:  rsync
 Requires:       python3
 Requires:       bash
 Requires:       java
@@ -47,7 +46,7 @@ for _f in %{_builddir}/%{source_name}-%{version}/bin/{printenv.py,restart.py}; d
 done
 
 %install
-rm -rf %{buildroot}
+%{__rm} -rf %{buildroot}
 %{__mkdir} -p %{buildroot}/opt/jetbrains/clion-eap
 %{__mkdir} -p %{buildroot}%{_bindir}
 %{__mkdir} -p %{buildroot}%{_datadir}/applications
@@ -57,7 +56,7 @@ rm -rf %{buildroot}
 %{__ln_s} /opt/jetbrains/clion-eap/bin/clion.svg %{buildroot}%{_datadir}/pixmaps/clion-eap.svg
 
 %{__install} -D -m 0644 %SOURCE1 -t %{buildroot}%{_datadir}/applications
-rsync -rtl %{_builddir}/%{source_name}-%{version}/ %{buildroot}/opt/jetbrains/clion-eap
+%{__cp} -r %{_builddir}/%{source_name}-%{version}/* %{buildroot}/opt/jetbrains/clion-eap
 
 %files
 %{_bindir}/clion-eap
