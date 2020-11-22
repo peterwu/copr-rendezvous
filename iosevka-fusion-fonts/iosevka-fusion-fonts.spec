@@ -1,6 +1,5 @@
 %global         source_name Iosevka
 %global         debug_package %{nil}
-%undefine       _disable_source_fetch
 
 Name:           iosevka-fusion-fonts
 Version:        3.7.1
@@ -23,7 +22,7 @@ Based on Iosevka font, https://github.com/be5invis/Iosevka,
 this font mixes elements from various fonts tailored to my personal taste.
 
 %prep
-%setup -n %{source_name}-%{version}
+%autosetup -n %{source_name}-%{version}
 %{__cp} %SOURCE1 %{_builddir}/%{source_name}-%{version}/private-build-plans.toml
 
 %build

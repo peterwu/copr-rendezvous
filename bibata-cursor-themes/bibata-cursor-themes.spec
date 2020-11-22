@@ -1,6 +1,5 @@
 %global         source_name Bibata_Cursor
 %global         debug_package %{nil}
-%undefine       _disable_source_fetch
 
 Name:           bibata-cursor-themes
 Version:        1.0.3
@@ -29,7 +28,7 @@ Requires:       gtk3
 OpenSource, Compact and Material Designed Cursor Set
 
 %prep
-%setup -n %{source_name}-%{version}
+%autosetup -n %{source_name}-%{version}
 
 %build
 virtualenv venv                                      # Create new virtualenv named `venv`
