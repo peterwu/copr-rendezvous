@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Name=PyCharm Community Edition
-Icon=pycharm-ce
-Exec=/usr/bin/pycharm-ce %f
+Icon=/opt/jetbrains/pycharm-ce/bin/pycharm.svg
+Exec=pycharm-ce %f
 Comment=Python IDE for Professional Developers
 Categories=Development;IDE;
 Terminal=false

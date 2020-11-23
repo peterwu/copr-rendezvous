@@ -1,5 +1,9 @@
-%global         source_name pycharm-community
+# disable debuginfo subpackage
 %global         debug_package %{nil}
+# Disable build-id symlinks to avoid conflicts
+%global         _build_id_links none
+
+%global         source_name pycharm-community
 
 Name:           jetbrains-pycharm-ce
 Version:        2020.2.3
@@ -40,10 +44,8 @@ done
 %{__mkdir} -p %{buildroot}/opt/jetbrains/pycharm-ce
 %{__mkdir} -p %{buildroot}%{_bindir}
 %{__mkdir} -p %{buildroot}%{_datadir}/applications
-%{__mkdir} -p %{buildroot}%{_datadir}/pixmaps
 
 %{__ln_s} /opt/jetbrains/pycharm-ce/bin/pycharm.sh %{buildroot}%{_bindir}/pycharm-ce
-%{__ln_s} /opt/jetbrains/pycharm-ce/bin/pycharm.svg %{buildroot}%{_datadir}/pixmaps/pycharm-ce.svg
 
 %{__install} -D -m 0644 %SOURCE1 -t %{buildroot}%{_datadir}/applications
 %{__cp} -r %{_builddir}/%{source_name}-%{version}/* %{buildroot}/opt/jetbrains/pycharm-ce

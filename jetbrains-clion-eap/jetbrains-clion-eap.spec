@@ -1,5 +1,9 @@
-%global         source_name clion
+# disable debuginfo subpackage
 %global         debug_package %{nil}
+# Disable build-id symlinks to avoid conflicts
+%global         _build_id_links none
+
+%global         source_name clion
 
 Name:           jetbrains-clion-eap
 Version:        203.5981.40
