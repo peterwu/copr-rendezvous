@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=CLion
-Icon=clion
+Icon=/opt/jetbrains/clion/bin/clion.svg
 Exec=clion %f
 Comment=A cross-platform IDE for C and C++
 Categories=Development;IDE;

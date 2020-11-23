@@ -41,10 +41,8 @@ find %{_builddir}/%{source_name}-%{version}/bin -type f -name '*.py' -exec sed -
 %{__mkdir} -p %{buildroot}/opt/jetbrains/clion
 %{__mkdir} -p %{buildroot}%{_bindir}
 %{__mkdir} -p %{buildroot}%{_datadir}/applications
-%{__mkdir} -p %{buildroot}%{_datadir}/pixmaps
 
 %{__ln_s} /opt/jetbrains/clion/bin/clion.sh %{buildroot}%{_bindir}/clion
-%{__ln_s} /opt/jetbrains/clion/bin/clion.svg %{buildroot}%{_datadir}/pixmaps/clion.svg
 
 %{__install} -D -m 0644 %SOURCE1 -t %{buildroot}%{_datadir}/applications
 %{__cp} -r %{_builddir}/%{source_name}-%{version}/* %{buildroot}/opt/jetbrains/clion

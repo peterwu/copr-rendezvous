@@ -2,7 +2,7 @@
 Version=1.0
 Type=Application
 Name=CLion EAP
-Icon=clion-eap
+Icon=/opt/jetbrains/clion-eap/bin/clion.svg
 Exec=clion-eap %f
 Comment=A cross-platform IDE for C and C++
 Categories=Development;IDE;
