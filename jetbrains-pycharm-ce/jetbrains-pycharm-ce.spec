@@ -6,7 +6,7 @@
 %global         source_name pycharm-community
 
 Name:           jetbrains-pycharm-ce
-Version:        2020.2.3
+Version:        2020.2.4
 Release:        1%{?dist}
 Summary:        JetBrain PyCharm Community Edition
 
