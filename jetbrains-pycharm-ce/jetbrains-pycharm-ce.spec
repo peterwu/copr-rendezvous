@@ -31,13 +31,8 @@ JetBrain PyCharm Community Edition
 %{__rm} -rf %{_builddir}/%{source_name}-%{version}/jbr
 %{__rm} -rf %{_builddir}/%{source_name}-%{version}/bin/fsnotifier
 
-for _f in %{_builddir}/%{source_name}-%{version}/bin/{pycharm.sh,format.sh,inspect.sh}; do
-  %{__sed} -i '1 s/\/bin\/sh/\/usr\/bin\/sh/' ${_f}
-done
-
-for _f in %{_builddir}/%{source_name}-%{version}/bin/{printenv.py,restart.py}; do
-  %{__sed} -i '1 s/env python/python3/' ${_f}
-done
+find %{_builddir}/%{source_name}-%{version}/bin -type f -name '*.sh' -exec sed -i '1 s/\/bin\/sh/\/usr\/bin\/sh/' {} \;
+find %{_builddir}/%{source_name}-%{version}/bin -type f -name '*.py' -exec sed -i '1 s/env python/python3/' {} \;
 
 %install
 %{__rm} -rf %{buildroot}
@@ -47,7 +42,7 @@ done
 
 %{__ln_s} /opt/jetbrains/pycharm-ce/bin/pycharm.sh %{buildroot}%{_bindir}/pycharm-ce
 
-%{__install} -D -m 0644 %SOURCE1 -t %{buildroot}%{_datadir}/applications
+%{__install} -D -m 0644 %{SOURCE1} -t %{buildroot}%{_datadir}/applications
 %{__cp} -r %{_builddir}/%{source_name}-%{version}/* %{buildroot}/opt/jetbrains/pycharm-ce
 
 %files
