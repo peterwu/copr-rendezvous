@@ -6,7 +6,7 @@
 %global         source_name clion
 
 Name:           jetbrains-clion
-Version:        2020.2.4
+Version:        2020.2.5
 Release:        1%{?dist}
 Summary:        JetBrains' C/C++ IDE.
 

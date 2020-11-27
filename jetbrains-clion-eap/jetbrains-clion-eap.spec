@@ -6,7 +6,7 @@
 %global         source_name clion
 
 Name:           jetbrains-clion-eap
-Version:        203.5981.40
+Version:        203.5981.106
 Release:        1%{?dist}
 Summary:        JetBrains C/C++ IDE. 30-day evaluation.
 
