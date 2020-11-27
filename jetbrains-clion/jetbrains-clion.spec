@@ -57,5 +57,7 @@ find %{_builddir}/%{source_name}-%{version}/bin -type f -name '*.py' -exec sed -
 /opt/jetbrains/clion/*
 
 %changelog
+* Fri Nov 27 09:43:05 EST 2020 Peter Wu <peterwu@hotmail.com>
+- CLion-2020.2.5
 * Mon Nov 23 09:42:31 AM EST 2020 Peter Wu <peterwu@hotmail.com>
 - CLion-2020.2.4

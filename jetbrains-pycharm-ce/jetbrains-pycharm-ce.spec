@@ -56,5 +56,7 @@ done
 /opt/jetbrains/pycharm-ce/*
 
 %changelog
+* Fri Nov 27 09:43:05 EST 2020 Peter Wu <peterwu@hotmail.com>
+- PyCharm CE 2020.2.4
 * Sat Nov 21 13:25:14 EST 2020 Peter Wu <peterwu@hotmail.com>
 - PyCharm CE 2020.2.3

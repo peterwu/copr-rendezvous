@@ -4,15 +4,17 @@
 %global         _build_id_links none
 
 %global         source_name clion
+%global         build_version 203.5981.106
 
 Name:           jetbrains-clion-eap
-Version:        203.5981.106
+Version:        2020.3
+#Version:        %{build_version}
 Release:        1%{?dist}
 Summary:        JetBrains C/C++ IDE. 30-day evaluation.
 
 License:        Custom. Refer to /opt/jetbrains/clion-eap/license for details.
 URL:            https://www.jetbrains.com/clion
-Source0:        https://download.jetbrains.com/cpp/CLion-%{version}.tar.gz
+Source0:        https://download.jetbrains.com/cpp/CLion-%{build_version}.tar.gz
 Source1:        %{name}.desktop
 
 Requires:       python3
@@ -58,5 +60,7 @@ find %{_builddir}/%{source_name}-%{version}/bin -type f -name '*.py' -exec sed -
 /opt/jetbrains/clion-eap/*
 
 %changelog
+* Fri Nov 27 09:43:05 EST 2020 Peter Wu <peterwu@hotmail.com>
+- CLion-203.5981.106
 * Sat Nov 21 13:25:14 EST 2020 Peter Wu <peterwu@hotmail.com>
 - CLion-203.5981.40
