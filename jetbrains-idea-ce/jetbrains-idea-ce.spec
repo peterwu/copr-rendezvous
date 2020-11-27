@@ -24,7 +24,6 @@ JetBrains IntelliJ IDEA Community Edition
 %{__rm} -rf %{_builddir}/%{source_name}-%{build_version}/jbr
 %{__rm} -rf %{_builddir}/%{source_name}-%{build_version}/bin/fsnotifier
 
-find %{_builddir}/%{source_name}-%{build_version}/bin -type f -name '*.sh' -exec sed -i '1 s/\/bin\/sh/\/usr\/bin\/sh/' {} \;
 find %{_builddir}/%{source_name}-%{build_version}/bin -type f -name '*.py' -exec sed -i '1 s/env python/python3/' {} \;
 
 %install
