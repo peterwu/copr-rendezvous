@@ -3,7 +3,7 @@
 
 Name:           iosevka-fusion-fonts
 Version:        4.0.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A custom font based on iosevka
 
 License:        SIL Open Font License Version 1.1
