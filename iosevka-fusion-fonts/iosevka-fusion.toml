@@ -1,13 +1,10 @@
 [buildPlans.iosevka-fusion]
 family = "Iosevka Fusion"
-spacing = "term"
+spacing = "fixed"
 serifs = "sans"
 
 [buildPlans.iosevka-fusion.variants]
 inherits = "ss20"
-
-[buildPlans.iosevka-fusion.ligations]
-inherits = "dlig"
 
 [buildPlans.iosevka-fusion.variants.design]
 capital-g = "toothless-rounded"

@@ -3,7 +3,7 @@
 
 Name:           iosevka-fusion-fonts
 Version:        4.0.0
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
 License:        SIL Open Font License Version 1.1
@@ -42,8 +42,6 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
-* Sat Nov 28 10:04:39 EST 2020 Peter Wu - v4.0.0
-- Changd to TERM style and added dlig ligature set
 * Thu Nov 26 10:26:41 EST 2020 Peter Wu - v4.0.0
 - New Release - v4.0.0
 * Tue Nov 17 11:42:02 EST 2020 Peter Wu - v4.0.0
