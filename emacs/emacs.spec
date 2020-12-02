@@ -7,6 +7,7 @@
 
 Summary:       GNU Emacs text editor
 Name:          emacs
+Epoch:         1
 Version:       28.0.50
 Release:       %{build_timestamp}~%{git_revision_short}%{?dist}
 License:       GPLv3+ and CC0-1.0
