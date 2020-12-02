@@ -16,7 +16,6 @@ Requires:       neovim
 
 Provides:       vi
 Provides:       vim
-Provides:       nvim
 
 Conflicts:      vi
 Conflicts:      vim
@@ -32,6 +31,8 @@ echo -e '#!/bin/sh\nexec nvim -RZ "$@"' > %{buildroot}%{_bindir}/rview
 echo -e '#!/bin/sh\nexec nvim -Z "$@"'  > %{buildroot}%{_bindir}/rvim
 echo -e '#!/bin/sh\nexec nvim -R "$@"'  > %{buildroot}%{_bindir}/view
 echo -e '#!/bin/sh\nexec nvim -d "$@"'  > %{buildroot}%{_bindir}/vimdiff
+
+%{__chmod} 0755 %{buildroot}%{_bindir}/*
 
 for _f in vi vim; do
   %{__ln_s} %{_bindir}/nvim %{buildroot}%{_bindir}/${_f}

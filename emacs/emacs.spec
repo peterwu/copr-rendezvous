@@ -91,7 +91,7 @@ LDFLAGS=-Wl,-z,relro;  export LDFLAGS;
 %configure --with-dbus --with-gif --with-jpeg --with-png --with-rsvg \
            --with-tiff --with-xft --with-xpm --with-x-toolkit=gtk3 --with-gpm=no \
            --with-xwidgets --with-modules --with-harfbuzz --with-cairo --with-json
-#make bootstrap -j $(nproc --all)
+
 %{__make} -j $(nproc --all)
 
 # Since we are building from the git repo we must also build the info files.
@@ -100,14 +100,9 @@ LDFLAGS=-Wl,-z,relro;  export LDFLAGS;
 %install
 %{make_install} -j $(nproc --all)
 
-# Remove the emacsclient desktop file
 %{__rm} %{buildroot}%{_datadir}/applications/emacsclient.desktop
-
-# Remove emacs.pdmp
 %{__rm} %{buildroot}%{_libexecdir}/%{name}/%{version}/%{_host}/emacs.pdmp
-
-# Remove devel header file
-%{__rm} -f %{buildroot}%{_includedir}/emacs-module.h
+%{__rm} %{buildroot}%{_includedir}/emacs-module.h
 
 %{__mv} %{buildroot}%{_bindir}/{etags,etags.emacs}
 %{__mv} %{buildroot}%{_mandir}/man1/{ctags.1.gz,gctags.1.gz}
@@ -116,7 +111,7 @@ LDFLAGS=-Wl,-z,relro;  export LDFLAGS;
 
 %{__mv} %{buildroot}%{_infodir}/{info.info.gz,info.gz}
 
-# Emacs 26.1 installs the upstream unit file to /usr/lib64 on 64bit archs, we don't want that
+# move emacs.service to the right place
 %{__mkdir} -p %{buildroot}%{_userunitdir}
 %{__mv} %{buildroot}%{_libdir}/systemd/user/emacs.service %{buildroot}%{_userunitdir}/emacs.service
 
