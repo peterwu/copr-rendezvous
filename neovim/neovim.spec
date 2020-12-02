@@ -51,7 +51,9 @@ parts of Vim, without compromise, and more.
 %files
 %license LICENSE
 %doc BACKERS.md CONTRIBUTING.md README.md
-%{_usr}/*
+%{_bindir}/nvim
+%{_libdir}/nvim/parser/c.so
+%{_datadir}/*
 
 %changelog
 * Tue Dec  1 15:16:59 EST 2020 Peter Wu - v0.5.0
