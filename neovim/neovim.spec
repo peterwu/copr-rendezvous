@@ -22,6 +22,7 @@ BuildRequires:  make
 BuildRequires:  pkgconfig
 BuildRequires:  unzip
 BuildRequires:  patch
+BuildRequires:  gettext
 
 #Requires:       
 
