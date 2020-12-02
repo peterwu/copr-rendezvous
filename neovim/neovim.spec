@@ -1,15 +1,16 @@
 %global         debug_package %{nil}
-%global         batch  828
-%global         commit g0a95549d6
+%global         git_revision d80f262f894bfc1d8a8ba79fdc5d1c14f738a140
+%global         git_revision_short %(echo %{git_revision} | head -c 7)
+%global         build_timestamp %(date +"%Y%m%d")
 
 Name:           neovim
 Version:        0.5.0
-Release:        %{batch}~%{commit}%{?dist}
-Summary:        Neovim %{version} nightly build
+Release:        %{build_timestamp}~%{git_revision_short}%{?dist}
+Summary:        Neovim %{version} pre-release build
 
 License:        Apache License Version 2.0
 URL:            https://github.com/neovim/neovim
-Source0:        %{url}/archive/nightly.tar.gz
+Source0:        %{url}/archive/%{git_revision}.tar.gz
 
 BuildRequires:  ninja-build
 BuildRequires:  libtool
@@ -24,7 +25,7 @@ BuildRequires:  unzip
 BuildRequires:  patch
 BuildRequires:  gettext
 
-#Requires:       
+Recommends:     xsel
 
 %description
 Neovim is a refactor - and sometimes redactor - in the tradition of
@@ -37,7 +38,7 @@ excisions, Neovim is Vim. It is built for users who want the good
 parts of Vim, without compromise, and more.
 
 %prep
-%autosetup -n neovim-nightly
+%autosetup -n %{name}-%{git_revision}
 
 %build
 %{__make} CMAKE_BUILD_TYPE=Release
@@ -53,8 +54,12 @@ parts of Vim, without compromise, and more.
 %doc BACKERS.md CONTRIBUTING.md README.md
 %{_bindir}/nvim
 %{_libdir}/nvim/parser/c.so
-%{_datadir}/*
+%{_mandir}/man1/nvim.1.gz
+%{_datadir}/pixmaps/nvim.png
+%{_datadir}/applications/*
+%{_datadir}/locale/*
+%{_datadir}/nvim/*
 
 %changelog
 * Tue Dec  1 15:16:59 EST 2020 Peter Wu - v0.5.0
-- 828_g0a95549d6
+- git commit d80f262f894bfc1d8a8ba79fdc5d1c14f738a140
