@@ -1,6 +1,6 @@
 %global         source_name idea-IC
 %global         debug_package %{nil}
-%global         build_version 202.8194.7
+%global         build_version 203.5981.155
 
 Name:           jetbrains-idea-ce
 Version:        2020.3
