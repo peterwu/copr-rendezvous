@@ -12,6 +12,7 @@ Create symlinks for neovim
 Replace vi & vim by linking relevant commands to neovim
 
 BuildRequires:  bash
+Requires:       neovim
 
 Provides:       vi
 Provides:       vim
