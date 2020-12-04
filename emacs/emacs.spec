@@ -2,7 +2,7 @@
 
 %global        build_timestamp %(date +"%Y%m%d")
 
-%global        git_revision eff6f0c7f123a79d376f5b06c3a946efb797bb03
+%global        git_revision 39915c708435cefd1c3eaddeec54d3b365d36515
 %global        git_revision_short %(echo %{git_revision} | head -c 7)
 
 Summary:       GNU Emacs text editor
@@ -90,7 +90,8 @@ LDFLAGS=-Wl,-z,relro;  export LDFLAGS;
 
 %configure --with-dbus --with-gif --with-jpeg --with-png --with-rsvg \
            --with-tiff --with-xft --with-xpm --with-x-toolkit=gtk3 --with-gpm=no \
-           --with-xwidgets --with-modules --with-harfbuzz --with-cairo --with-json
+           --with-xwidgets --with-modules --with-harfbuzz --with-cairo --with-json \
+           --without-xaw3d --enable-link-time-optimization
 
 %{__make} -j $(nproc --all)
 
@@ -132,5 +133,8 @@ LDFLAGS=-Wl,-z,relro;  export LDFLAGS;
 %{_datadir}/*
 
 %changelog
+* Fri Dec  4 18:48:53 EST 2020 Peter Wu <peterwu@hotmail.com>
+- enable LTO
+- git commit 39915c708435cefd1c3eaddeec54d3b365d36515
 * Wed Dec  2 11:41:51 EST 2020 Peter Wu <peterwu@hotmail.com>
 - git commit eff6f0c7f123a79d376f5b06c3a946efb797bb03
