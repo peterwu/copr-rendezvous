@@ -16,7 +16,6 @@ j = "flat-hook-serifed"
 l = "serifed-flat-tailed"
 t = "flat-hook"
 
-zero       = "long-dotted"
 six        = "closed-contour"
 nine       = "closed-contour"
 asterisk   = "low"
