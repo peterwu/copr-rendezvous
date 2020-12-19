@@ -1,7 +1,7 @@
 [buildPlans.iosevka-fusion]
-family = "Iosevka Fusion"
+family  = "Iosevka Fusion"
 spacing = "fixed"
-serifs = "sans"
+serifs  = "sans"
 
 [buildPlans.iosevka-fusion.variants]
 inherits = "ss20"
@@ -15,6 +15,7 @@ i = "hooky"
 j = "flat-hook-serifed"
 l = "serifed-flat-tailed"
 t = "flat-hook"
+y = "curly-turn"
 
 asterisk   = "low"
 underscore = "low"
@@ -23,7 +24,6 @@ underscore = "low"
 f = "flat-hook-tailed-crossbar-at-x-height"
 i = "serifed-flat-tailed"
 k = "curly"
-y = "curly"
 
 [buildPlans.iosevka-fusion.weights.regular]
 shape = 400
