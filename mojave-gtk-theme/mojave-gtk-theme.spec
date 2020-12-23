@@ -19,6 +19,7 @@ BuildArch:      noarch
 
 BuildRequires:  gtk-murrine-engine
 BuildRequires:  gtk2-engines
+BuildRequires:  glib2-devel
 BuildRequires:  sassc
 
 %description
