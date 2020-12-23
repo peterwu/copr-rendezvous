@@ -15,6 +15,8 @@ License:        GNU General Public License v3.0
 URL:            https://github.com/vinceliuice/%{source_name}
 Source0:        %{url}/archive/%{git_revision}.tar.gz
 
+Patch0:         dash-startup.patch 
+
 BuildArch:      noarch
 
 BuildRequires:  gtk-murrine-engine
@@ -26,7 +28,7 @@ BuildRequires:  sassc
 Mojave is a macos Mojave like theme for GTK 3, GTK 2 and Gnome-Shell  
 
 %prep
-%setup -q -n %{source_name}-%{git_revision}
+%autosetup -p1 -n %{source_name}-%{git_revision}
 
 %install
 %__rm -rf $RPM_BUILD_ROOT
