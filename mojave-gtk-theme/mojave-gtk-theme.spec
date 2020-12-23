@@ -19,6 +19,7 @@ BuildArch:      noarch
 
 BuildRequires:  gtk-murrine-engine
 BuildRequires:  gtk2-engines
+BuildRequires:  sassc
 
 %description
 Mojave is a macos Mojave like theme for GTK 3, GTK 2 and Gnome-Shell  
