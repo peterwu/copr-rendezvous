@@ -17,6 +17,8 @@ Source0:        %{url}/archive/%{git_revision}.tar.gz
 
 BuildArch:      noarch
 
+BuildRequires:  gtk-update-icon-cache
+
 %description
 A flat colorful Design icon theme 
 
@@ -25,6 +27,7 @@ A flat colorful Design icon theme
 
 %install
 %__rm -rf $RPM_BUILD_ROOT
+%__mkdir -p %{buildroot}%{_datadir}/icons
 ./install.sh -d %{buildroot}%{_datadir}/icons
 
 %files
