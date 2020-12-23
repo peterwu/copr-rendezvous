@@ -1,14 +1,14 @@
 %define         _debugsource_template %{nil}
 
-%global         build_timestamp %(date +"%m%d")
+%global         build_timestamp %(date +"%Y%m%d")
 %global         git_revision b7523ac51d344fbc76622c878049338ff4ca04a4
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
 
 Name:           whitesur-gtk-theme
-Version:        2020
-Release:        %{build_timestamp}~%{git_revision_short}%{?dist}
+Version:        %{build_timestamp}
+Release:        %{git_revision_short}%{?dist}
 Summary:        MacOS Big Sur like theme for Gnome desktops
 
 License:        GNU General Public License v3.0

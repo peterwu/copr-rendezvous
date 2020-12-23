@@ -1,18 +1,18 @@
 %define         _debugsource_template %{nil}
 
-%global         build_timestamp %(date +"%m%d")
+%global         build_timestamp %(date +"%Y%m%d")
 %global         git_revision 3c7c24acd542be8477de33abd2b416cf0805a25b
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name Tela-icon-theme
 
 Name:           tela-icon-theme
-Version:        2020
-Release:        %{build_timestamp}~%{git_revision_short}%{?dist}
+Version:        %{build_timestamp}
+Release:        %{git_revision_short}%{?dist}
 Summary:        A flat colorful Design icon theme 
 
 License:        GNU General Public License v3.0
-URL:            https://github.com/vinceliuice/Tela-icon-theme
+URL:            https://github.com/vinceliuice/%{source_name}
 Source0:        %{url}/archive/%{git_revision}.tar.gz
 
 BuildArch:      noarch

@@ -1,14 +1,14 @@
 %define         _debugsource_template %{nil}
 
-%global         build_timestamp %(date +"%m%d")
+%global         build_timestamp %(date +"%Y%m%d")
 %global         git_revision 2a6bbd678cb521fbb472fc978744de403da0b6d5
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name Mojave-gtk-theme
 
 Name:           mojave-gtk-theme
-Version:        2020
-Release:        %{build_timestamp}~%{git_revision_short}%{?dist}
+Version:        %{build_timestamp}
+Release:        %{git_revision_short}%{?dist}
 Summary:        Mojave is a macos Mojave like theme for GTK 3, GTK 2 and Gnome-Shell  
 
 License:        GNU General Public License v3.0
