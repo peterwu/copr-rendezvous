@@ -12,7 +12,7 @@ Release:        %{build_timestamp}~%{git_revision_short}%{?dist}
 Summary:        Mojave is a macos Mojave like theme for GTK 3, GTK 2 and Gnome-Shell  
 
 License:        GNU General Public License v3.0
-URL:            https://github.com/vinceliuice/Mojave-gtk-theme
+URL:            https://github.com/vinceliuice/%{source_name}
 Source0:        %{url}/archive/%{git_revision}.tar.gz
 
 BuildArch:      noarch
