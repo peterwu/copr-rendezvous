@@ -31,7 +31,7 @@ Qogir is a flat Design theme for GTK
 %install
 %__rm -rf $RPM_BUILD_ROOT
 %__mkdir -p %{buildroot}%{_datadir}/themes 
-./install.sh --image --win --dest %{buildroot}%{_datadir}/themes --logo fedora --theme standard
+./install.sh --win --dest %{buildroot}%{_datadir}/themes --logo fedora --theme standard
 
 %files
 %license COPYING
