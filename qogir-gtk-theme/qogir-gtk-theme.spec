@@ -4,7 +4,7 @@
 %global         git_revision 22855049724a95c30c662a3eb050ede9d842efaa
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
-%global         source_name Qogir-gtk-theme
+%global         source_name Qogir-theme
 
 Name:           qogir-gtk-theme
 Version:        %{build_timestamp}
