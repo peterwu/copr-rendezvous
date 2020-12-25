@@ -23,6 +23,7 @@ BuildRequires:  glib2-devel
 BuildRequires:  sassc
 BuildRequires:  optipng
 BuildRequires:  inkscape
+BuildRequires:  libnotify
 
 %description
 MacOS Big Sur like theme for Gnome desktops
