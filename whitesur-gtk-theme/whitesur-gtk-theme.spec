@@ -33,7 +33,7 @@ MacOS Big Sur like theme for Gnome desktops
 %autosetup -p1 -n %{source_name}-%{git_revision}
 
 %build
-%__sed -i "/\$nautilus_sidebar_size/s/200px/220px/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/gtk/_applications.scss
+%__sed -i "/\$nautilus_sidebar_size/s/200px/240px/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/gtk/_applications.scss
 #%__sed -i "/\$selected_bg_color/s/#0860f2/${theme_color}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
 #%__sed -i "/\$panel_opacity/s/0.16/${panel_trans}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
    
