@@ -15,6 +15,8 @@ License:        GNU General Public License v3.0
 URL:            https://github.com/vinceliuice/%{source_name}
 Source0:        %{url}/archive/%{git_revision}.tar.gz
 
+Patch0:         show-apps-icon.patch 
+
 BuildArch:      noarch
 
 BuildRequires:  gtk-murrine-engine
@@ -23,20 +25,20 @@ BuildRequires:  glib2-devel
 BuildRequires:  sassc
 BuildRequires:  optipng
 BuildRequires:  inkscape
-BuildRequires:  libnotify
-BuildRequires:  dialog
 
 %description
 MacOS Big Sur like theme for Gnome desktops
 
 %prep
-%setup -q -n %{source_name}-%{git_revision}
+%autosetup -p1 -n %{source_name}-%{git_revision}
 
 %build
 %__sed -i "/\$nautilus_sidebar_size/s/200px/220px/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/gtk/_applications.scss
 #%__sed -i "/\$selected_bg_color/s/#0860f2/${theme_color}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
 #%__sed -i "/\$panel_opacity/s/0.16/${panel_trans}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
    
+# delete notify-send
+%__sed -i "/notify-send/d" %{_builddir}/%{source_name}-%{git_revision}/install.sh
 
 %install
 %__rm -rf $RPM_BUILD_ROOT
@@ -48,9 +50,10 @@ MacOS Big Sur like theme for Gnome desktops
 %doc README.md HACKING
 %{_datadir}/themes/*
 
-
 %changelog
-* Sat Dec 26 12:18:48 PM EST 2020 Peter Wu
+* Sat Dec 26 14:18:48 EST 2020 Peter Wu
+- remove libnotify (notify-send)
+- use gnome's default show-apps icon
 - git commit 77a3986d44fca1ebb03519a6640c1ccab77c3154
 * Fri Dec 25 09:15:53 PM EST 2020 Peter Wu
 - git commit 64e54cbbecc121c7f07edc0bbb3a9ad4530c65c6

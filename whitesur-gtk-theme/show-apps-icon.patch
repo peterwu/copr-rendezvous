@@ -1,0 +1,28 @@
+diff --git a/src/sass/gnome-shell/_common.scss b/src/sass/gnome-shell/_common.scss
+index a7634a3..bbd8245 100644
+--- a/src/sass/gnome-shell/_common.scss
++++ b/src/sass/gnome-shell/_common.scss
+@@ -2238,20 +2238,19 @@ StWidget.focused .app-well-app-running-dot {
+ }
+ 
+ .show-apps .show-apps-icon {
+-  color: transparent;
+-  background-image: url("assets/view-app-grid.svg");
++  color: $selected_fg_color;
+   background-size: contain;
+ }
+ 
+ .show-apps .overview-icon {
+-  color: transparent;
++  color: $header_fg;
+ }
+ 
+ .show-apps:hover .show-apps-icon,
+ .show-apps:active .show-apps-icon,
+ .show-apps:checked .show-apps-icon,
+ .show-apps:focus .show-apps-icon {
+-  color: transparent;
++  color: $selected_fg_color;
+   transition-duration: $longer_duration;
+ }
+ 
