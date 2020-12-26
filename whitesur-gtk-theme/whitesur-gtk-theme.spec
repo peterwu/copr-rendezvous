@@ -43,6 +43,7 @@ MacOS Big Sur like theme for Gnome desktops
 %install
 %__rm -rf $RPM_BUILD_ROOT
 %__mkdir -p %{buildroot}%{_datadir}/themes 
+./parse-sass.sh
 ./install.sh --dest %{buildroot}%{_datadir}/themes --icon fedora
 
 %files
