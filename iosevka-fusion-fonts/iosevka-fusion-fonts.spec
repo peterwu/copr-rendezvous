@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        4.1.1
+Version:        4.2.0
 Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
@@ -23,18 +23,18 @@ this font mixes elements from various fonts tailored to my personal taste.
 
 %prep
 %autosetup -n %{source_name}-%{version}
-%{__cp} %SOURCE1 %{_builddir}/%{source_name}-%{version}/private-build-plans.toml
+%__cp %SOURCE1 %{_builddir}/%{source_name}-%{version}/private-build-plans.toml
 
 %build
 npm install
 npm run build -- ttf::iosevka-fusion
 
 %install
-%{__rm} -rf %{buildroot}
-%{__install} -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/%{name}
+%__rm -rf %{buildroot}
+%__install -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/%{name}
 
 %clean
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %license LICENSE.md
@@ -42,6 +42,8 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Sat Dec 26 09:29:58 EST 2020 Peter Wu - v4.2.0
+- Release - v4.2.0
 * Sat Dec 19 18:08:08 EST 2020 Peter Wu - v4.1.1
 - Release - v4.1.1
 * Sat Dec 19 09:10:46 EST 2020 Peter Wu - v4.1.0
