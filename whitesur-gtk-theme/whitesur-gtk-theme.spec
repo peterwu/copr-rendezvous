@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision 64e54cbbecc121c7f07edc0bbb3a9ad4530c65c6
+%global         git_revision 77a3986d44fca1ebb03519a6640c1ccab77c3154
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
@@ -24,6 +24,7 @@ BuildRequires:  sassc
 BuildRequires:  optipng
 BuildRequires:  inkscape
 BuildRequires:  libnotify
+BuildRequires:  dialog
 
 %description
 MacOS Big Sur like theme for Gnome desktops
@@ -43,6 +44,8 @@ MacOS Big Sur like theme for Gnome desktops
 
 
 %changelog
+* Sat Dec 26 12:18:48 PM EST 2020 Peter Wu
+- git commit 77a3986d44fca1ebb03519a6640c1ccab77c3154
 * Fri Dec 25 09:15:53 PM EST 2020 Peter Wu
 - git commit 64e54cbbecc121c7f07edc0bbb3a9ad4530c65c6
 * Fri Dec 25 10:52:02 EST 2020 Peter Wu
