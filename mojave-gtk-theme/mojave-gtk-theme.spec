@@ -15,7 +15,7 @@ License:        GNU General Public License v3.0
 URL:            https://github.com/vinceliuice/%{source_name}
 Source0:        %{url}/archive/%{git_revision}.tar.gz
 
-Patch0:         dash-startup.patch 
+Patch0:         show-apps-icon.patch 
 
 BuildArch:      noarch
 
@@ -39,7 +39,6 @@ Mojave is a macos Mojave like theme for GTK 3, GTK 2 and Gnome-Shell
 %license COPYING
 %doc README.md HACKING
 %{_datadir}/themes/*
-
 
 %changelog
 * Wed Dec 23 11:50:04 EST 2020 Peter Wu <peterwu@hotmail.com>
