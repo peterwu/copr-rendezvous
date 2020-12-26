@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision c7886cf69c78a9de297260331250139d78138ee2
+%global         git_revision 64e54cbbecc121c7f07edc0bbb3a9ad4530c65c6
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
@@ -43,6 +43,8 @@ MacOS Big Sur like theme for Gnome desktops
 
 
 %changelog
+* Fri Dec 25 09:15:53 PM EST 2020 Peter Wu
+- git commit 64e54cbbecc121c7f07edc0bbb3a9ad4530c65c6
 * Fri Dec 25 10:52:02 EST 2020 Peter Wu
 - git commit c7886cf69c78a9de297260331250139d78138ee2
 * Wed Dec 23 11:50:04 EST 2020 Peter Wu <peterwu@hotmail.com>
