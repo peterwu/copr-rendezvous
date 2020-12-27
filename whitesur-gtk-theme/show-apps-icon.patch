@@ -1,8 +1,8 @@
-diff --git a/src/sass/gnome-shell/_common.scss b/src/sass/gnome-shell/_common.scss
-index a7634a3..bbd8245 100644
---- a/src/sass/gnome-shell/_common.scss
-+++ b/src/sass/gnome-shell/_common.scss
-@@ -2238,20 +2238,19 @@ StWidget.focused .app-well-app-running-dot {
+diff --git a/src/sass/gnome-shell/widgets/_dashboard.scss b/src/sass/gnome-shell/widgets/_dashboard.scss
+index 0df9db9..d1839da 100644
+--- a/src/sass/gnome-shell/widgets/_dashboard.scss
++++ b/src/sass/gnome-shell/widgets/_dashboard.scss
+@@ -155,8 +155,7 @@ StWidget.focused .app-well-app-running-dot {
  }
  
  .show-apps .show-apps-icon {
@@ -12,12 +12,7 @@ index a7634a3..bbd8245 100644
    background-size: contain;
  }
  
- .show-apps .overview-icon {
--  color: transparent;
-+  color: $header_fg;
- }
- 
- .show-apps:hover .show-apps-icon,
+@@ -168,7 +167,7 @@ StWidget.focused .app-well-app-running-dot {
  .show-apps:active .show-apps-icon,
  .show-apps:checked .show-apps-icon,
  .show-apps:focus .show-apps-icon {
