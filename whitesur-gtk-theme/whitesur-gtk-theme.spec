@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision 77a3986d44fca1ebb03519a6640c1ccab77c3154
+%global         git_revision 1c26ca64e654e13418b4c8375a26b637519b3ea4
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
@@ -52,6 +52,8 @@ MacOS Big Sur like theme for Gnome desktops
 %{_datadir}/themes/*
 
 %changelog
+* Sun Dec 27 10:01:55 EST 2020 Peter Wu
+- git commit 1c26ca64e654e13418b4c8375a26b637519b3ea4
 * Sat Dec 26 14:18:48 EST 2020 Peter Wu
 - remove libnotify (notify-send)
 - use gnome's default show-apps icon
