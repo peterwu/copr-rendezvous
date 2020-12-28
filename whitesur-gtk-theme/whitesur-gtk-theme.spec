@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision 1c26ca64e654e13418b4c8375a26b637519b3ea4
+%global         git_revision b42965c6cfe28ccceba4472f176f9f0a70795d32
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
@@ -14,8 +14,6 @@ Summary:        MacOS Big Sur like theme for Gnome desktops
 License:        GNU General Public License v3.0
 URL:            https://github.com/vinceliuice/%{source_name}
 Source0:        %{url}/archive/%{git_revision}.tar.gz
-
-Patch0:         show-apps-icon.patch 
 
 BuildArch:      noarch
 
@@ -30,13 +28,20 @@ BuildRequires:  inkscape
 MacOS Big Sur like theme for Gnome desktops
 
 %prep
-%autosetup -p1 -n %{source_name}-%{git_revision}
+%autosetup -n %{source_name}-%{git_revision}
 
 %build
 #%__sed -i "/\$nautilus_sidebar_size/s/200px/280px/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/gtk/_applications.scss
 #%__sed -i "/\$selected_bg_color/s/#0860f2/${theme_color}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
 #%__sed -i "/\$panel_opacity/s/0.16/${panel_trans}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
    
+# remove the view-app-grid.svg
+sed -i \
+    -e "/view-app-grid.svg/d" \
+    -e "/.show-apps .show-apps-icon/{n;s/transparent/\$selected_fg_color/}" \
+    -e "/.show-apps:focus .show-apps-icon/{n;s/transparent/\$selected_fg_color/}" \
+    %{_builddir}/%{source_name}-%{git_revision}/src/sass/gnome-shell/widgets/_dashboard.scss
+
 # delete notify-send
 %__sed -i "/notify-send/d" %{_builddir}/%{source_name}-%{git_revision}/install.sh
 
@@ -52,6 +57,8 @@ MacOS Big Sur like theme for Gnome desktops
 %{_datadir}/themes/*
 
 %changelog
+* Mon Dec 28 10:13:15 EST 2020 Peter Wu
+- git commit b42965c6cfe28ccceba4472f176f9f0a70795d32
 * Sun Dec 27 10:01:55 EST 2020 Peter Wu
 - git commit 1c26ca64e654e13418b4c8375a26b637519b3ea4
 * Sat Dec 26 14:18:48 EST 2020 Peter Wu
