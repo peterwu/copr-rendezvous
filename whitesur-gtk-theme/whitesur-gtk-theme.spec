@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision b42965c6cfe28ccceba4472f176f9f0a70795d32
+%global         git_revision ac5b9a31020ac4a0f381e06ba8dfdefaaf78166d
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
@@ -31,25 +31,22 @@ MacOS Big Sur like theme for Gnome desktops
 %autosetup -n %{source_name}-%{git_revision}
 
 %build
-#%__sed -i "/\$nautilus_sidebar_size/s/200px/280px/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/gtk/_applications.scss
-#%__sed -i "/\$selected_bg_color/s/#0860f2/${theme_color}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
-#%__sed -i "/\$panel_opacity/s/0.16/${panel_trans}/" %{_builddir}/%{source_name}-%{git_revision}/src/sass/_colors.scss
    
 # remove the view-app-grid.svg
-sed -i \
-    -e "/view-app-grid.svg/d" \
-    -e "/.show-apps .show-apps-icon/{n;s/transparent/\$selected_fg_color/}" \
-    -e "/.show-apps:focus .show-apps-icon/{n;s/transparent/\$selected_fg_color/}" \
+%__sed -i \
+       -e "/view-app-grid.svg/d" \
+       -e "/.show-apps .show-apps-icon/{n;s/transparent/\$selected_fg_color/}" \
+       -e "/.show-apps:focus .show-apps-icon/{n;s/transparent/\$selected_fg_color/}" \
     %{_builddir}/%{source_name}-%{git_revision}/src/sass/gnome-shell/widgets/_dashboard.scss
 
 # delete notify-send
-%__sed -i "/notify-send/d" %{_builddir}/%{source_name}-%{git_revision}/install.sh
+# %__sed -i "/notify-send/d" %{_builddir}/%{source_name}-%{git_revision}/install.sh
 
 %install
 %__rm -rf $RPM_BUILD_ROOT
 %__mkdir -p %{buildroot}%{_datadir}/themes 
 ./parse-sass.sh
-./install.sh --icon fedora --dest %{buildroot}%{_datadir}/themes --size 280px
+./install.sh --icon fedora --dest %{buildroot}%{_datadir}/themes --size 280
 
 %files
 %license COPYING
@@ -57,6 +54,8 @@ sed -i \
 %{_datadir}/themes/*
 
 %changelog
+* Tue 29 Dec 2020 09:49:20 EST Peter Wu
+- git commit ac5b9a31020ac4a0f381e06ba8dfdefaaf78166d
 * Mon Dec 28 10:13:15 EST 2020 Peter Wu
 - git commit b42965c6cfe28ccceba4472f176f9f0a70795d32
 * Sun Dec 27 10:01:55 EST 2020 Peter Wu
