@@ -11,7 +11,7 @@ capital-g = "toothless-rounded"
 
 f = "flat-hook-crossbar-at-x-height"
 g = "singlestorey-flat-hook"
-i = "hooky"
+i = "serifed-flat-tailed"
 j = "flat-hook-serifed"
 l = "serifed-flat-tailed"
 t = "flat-hook"
@@ -22,7 +22,6 @@ underscore = "low"
 
 [buildPlans.iosevka-fusion.variants.italic]
 f = "flat-hook-tailed-crossbar-at-x-height"
-i = "serifed-flat-tailed"
 k = "curly"
 
 [buildPlans.iosevka-fusion.weights.regular]

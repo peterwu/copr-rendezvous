@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        4.3.0
+Version:        4.4.0
 Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
@@ -42,6 +42,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Sat Jan  9 09:08:19 EST 2021 Peter Wu
+- change i to serifed-flat-tailed
+- Release v4.4.0
 * Sat Jan  2 13:44:06 EST 2021 Peter Wu
 - Release v4.3.0
 * Sat Dec 26 09:29:58 EST 2020 Peter Wu - v4.2.0
