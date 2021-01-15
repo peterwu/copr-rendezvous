@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision 9dea10d1ba6672b4c6e8d01f9e8ee12ae53cc703
+%global         git_revision a1ce4202ef5335952b6f2e91ccdc444103621241
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name Tela-icon-theme
@@ -9,7 +9,7 @@
 Name:           tela-icon-theme
 Version:        %{build_timestamp}
 Release:        %{git_revision_short}%{?dist}
-Summary:        A flat colorful Design icon theme 
+Summary:        A flat colorful Design icon theme
 
 License:        GNU General Public License v3.0
 URL:            https://github.com/vinceliuice/%{source_name}
@@ -20,7 +20,7 @@ BuildArch:      noarch
 BuildRequires:  gtk-update-icon-cache
 
 %description
-A flat colorful Design icon theme 
+A flat colorful Design icon theme
 
 %prep
 %setup -q -n %{source_name}-%{git_revision}
@@ -36,6 +36,8 @@ A flat colorful Design icon theme
 %{_datadir}/icons/*
 
 %changelog
+* Thu Jan 14 20:24:44 PM EST 2021 Peter Wu
+- git commit a1ce4202ef5335952b6f2e91ccdc444103621241
 * Mon Dec 28 09:36:07 EST 2020 Peter Wu
 - git commit 9dea10d1ba6672b4c6e8d01f9e8ee12ae53cc703
 * Wed Dec 23 11:50:04 EST 2020 Peter Wu <peterwu@hotmail.com>
