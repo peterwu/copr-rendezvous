@@ -1,7 +1,7 @@
 %define         _debugsource_template %{nil}
 
 %global         build_timestamp %(date +"%Y%m%d")
-%global         git_revision ac5b9a31020ac4a0f381e06ba8dfdefaaf78166d
+%global         git_revision 134e56a109e043de0ac9fb036aa078ee396eb70f
 %global         git_revision_short %(echo %{git_revision} | head -c 7)
 
 %global         source_name WhiteSur-gtk-theme
@@ -31,7 +31,7 @@ MacOS Big Sur like theme for Gnome desktops
 %autosetup -n %{source_name}-%{git_revision}
 
 %build
-   
+
 # remove the view-app-grid.svg
 %__sed -i \
        -e "/view-app-grid.svg/d" \
@@ -44,7 +44,7 @@ MacOS Big Sur like theme for Gnome desktops
 
 %install
 %__rm -rf $RPM_BUILD_ROOT
-%__mkdir -p %{buildroot}%{_datadir}/themes 
+%__mkdir -p %{buildroot}%{_datadir}/themes
 ./parse-sass.sh
 ./install.sh --icon fedora --dest %{buildroot}%{_datadir}/themes --size 280
 
@@ -54,6 +54,8 @@ MacOS Big Sur like theme for Gnome desktops
 %{_datadir}/themes/*
 
 %changelog
+* Thu Jan 14 20:21:20 EST 2021 Peter Wu
+- git commit 134e56a109e043de0ac9fb036aa078ee396eb70f
 * Tue 29 Dec 2020 09:49:20 EST Peter Wu
 - git commit ac5b9a31020ac4a0f381e06ba8dfdefaaf78166d
 * Mon Dec 28 10:13:15 EST 2020 Peter Wu
