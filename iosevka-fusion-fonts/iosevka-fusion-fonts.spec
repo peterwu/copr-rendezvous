@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        5.0.1
+Version:        5.0.2
 Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
@@ -42,6 +42,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Wed Feb 17 09:15:00 EST 2021 Peter Wu
+- Release 5.0.2
+
 * Sun Feb 14 11:11:43 EST 2021 Peter Wu
 - Release 5.0.1
 
