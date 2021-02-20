@@ -16,12 +16,11 @@ capital-x = "curly"
 capital-y = "curly"
 capital-z = "curly"
 
+i = "serifed-flat-tailed"
 j = "flat-hook-serifed"
-k = "curly"
 l = "serifed-flat-tailed"
 t = "flat-hook"
 x = "curly"
-y = "curly-turn"
 z = "curly"
 
 turn-v         = "curly"
@@ -46,16 +45,18 @@ underscore = "low"
 [buildPlans.iosevka-fusion.variants.upright]
 f = "flat-hook-crossbar-at-x-height"
 g = "single-storey-flat-hook"
-i = "hooky"
+k = "curly"
 v = "curly"
 w = "curly"
+y = "curly-turn"
 
 [buildPlans.iosevka-fusion.variants.italic]
 f = "flat-hook-tailed-crossbar-at-x-height"
 g = "double-storey"
-i = "serifed-flat-tailed"
+k = "cursive"
 v = "cursive"
 w = "cursive"
+y = "cursive-flat-hook"
 
 [buildPlans.iosevka-fusion.weights.regular]
 shape = 400

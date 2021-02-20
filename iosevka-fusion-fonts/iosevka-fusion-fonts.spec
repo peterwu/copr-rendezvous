@@ -2,8 +2,8 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        5.0.2
-Release:        2%{?dist}
+Version:        5.0.3
+Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
 License:        SIL Open Font License Version 1.1
@@ -42,6 +42,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Sat Feb 20 16:26:44 EST 2021 Peter Wu
+- Release 5.0.3
+
 * Thu Feb 18 16:57:55 EST 2021 Peter Wu
 - Updated font's toml spec
 
