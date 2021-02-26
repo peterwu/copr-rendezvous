@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           bibata-cursor-themes
-Version:        1.0.3
+Version:        1.1.0
 Release:        1%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Set
 
@@ -18,10 +18,14 @@ BuildRequires:  python3
 BuildRequires:  python3-pip
 BuildRequires:  python3-virtualenv
 BuildRequires:  libX11-xcb
-BuildRequires:  gtk3
+BuildRequires:  libX11-devel
+BuildRequires:  libXcursor-devel
+BuildRequires:  libpng-devel
+BuildRequires:  gtk3-devel
 BuildRequires:  nss
 BuildRequires:  mesa-libgbm
 BuildRequires:  alsa-lib
+
 Requires:       gtk3
 
 %description
@@ -31,25 +35,18 @@ OpenSource, Compact and Material Designed Cursor Set
 %autosetup -n %{source_name}-%{version}
 
 %build
-virtualenv venv                                      # Create new virtualenv named `venv`
-source venv/bin/activate                             # Activate virtualenv
-yarn install                                         # Install all Node Packages
-yarn py_install                                      # Install all PyPi Packages with Bibata builder
-yarn render:bibata-modern                            # Render Bibata Modern Bitmaps
-yarn render:bibata-original                          # Render Bibata Original Bitmaps
-yarn build:x11                                       # Build only X11 cursors
-deactivate
+%__make unix
 
 %install
-%{__rm} -rf %{buildroot}
-%{__mkdir} -p %{buildroot}%{_datadir}/icons
+%__rm -rf %{buildroot}
+%__mkdir -p %{buildroot}%{_datadir}/icons
 for theme in $(ls %{_builddir}/%{source_name}-%{version}/themes); do
-  %{__mv} %{_builddir}/%{source_name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
-  %{__chmod} 0755 %{buildroot}%{_datadir}/icons/${theme}
+  %__mv %{_builddir}/%{source_name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
+  %__chmod 0755 %{buildroot}%{_datadir}/icons/${theme}
 done
 
 %clean
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 
 %files
 %license LICENSE
@@ -57,5 +54,8 @@ done
 %{_datadir}/icons/*
 
 %changelog
+* Fri Feb 26 09:45:42 EST 2021 Peter Wu
+- New Release - v1.1.0
+
 * Tue Nov 17 09:42:13 EST 2020 Peter Wu <peterwu@hotmail.com>
 - New Release - v1.0.3
