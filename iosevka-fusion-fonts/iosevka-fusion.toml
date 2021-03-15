@@ -20,8 +20,6 @@ i = "serifed-flat-tailed"
 j = "flat-hook-serifed"
 l = "serifed-flat-tailed"
 t = "flat-hook"
-x = "curly"
-z = "curly"
 
 turn-v         = "curly"
 lower-lambda   = "curly-turn"
@@ -48,7 +46,9 @@ g = "single-storey-flat-hook"
 k = "curly"
 v = "curly"
 w = "curly"
+x = "curly"
 y = "curly-turn"
+z = "curly"
 
 [buildPlans.iosevka-fusion.variants.italic]
 f = "flat-hook-tailed-crossbar-at-x-height"
@@ -56,7 +56,9 @@ g = "double-storey"
 k = "cursive"
 v = "cursive"
 w = "cursive"
+x = "cursive"
 y = "cursive-flat-hook"
+z = "cursive"
 
 [buildPlans.iosevka-fusion.weights.regular]
 shape = 400
