@@ -39,7 +39,6 @@ nine  = "open-contour"
 
 asterisk   = "hex-low"
 underscore = "low"
-paren = "large-contour"
 
 [buildPlans.iosevka-fusion.variants.upright]
 f = "flat-hook-crossbar-at-x-height"
