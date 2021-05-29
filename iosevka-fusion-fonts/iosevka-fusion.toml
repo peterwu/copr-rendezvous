@@ -29,9 +29,11 @@ z = "curly-serifless"
 
 turn-v          = "curly"
 lower-lambda    = "curly-turn"
-cyrl-ka         = "curly-serifless"
 cyrl-capital-ka = "curly-serifless"
+cyrl-ka         = "curly-serifless"
 cyrl-capital-u  = "curly-turn"
+cyrl-capital-ya = "curly"
+cyrl-ya         = "curly"
 
 zero  = "slashed"
 one   = "nobase"
@@ -46,6 +48,7 @@ nine  = "open-contour"
 
 asterisk   = "penta-low"
 underscore = "low"
+question   = "corner-flat-hooked"
 
 [buildPlans.iosevka-fusion.variants.upright]
 f = "flat-hook-crossbar-at-x-height"
