@@ -16,6 +16,7 @@ capital-x = "curly-serifless"
 capital-y = "curly-serifless"
 capital-z = "curly-serifless"
 
+g = "single-storey-flat-hook-serifless"
 i = "serifed-flat-tailed"
 j = "flat-hook-serifed"
 k = "curly-serifless"
@@ -48,15 +49,14 @@ nine  = "open-contour"
 
 asterisk   = "penta-low"
 underscore = "low"
+percent    = "rings-continuous-slash"
 question   = "corner-flat-hooked"
 
 [buildPlans.iosevka-fusion.variants.upright]
 f = "flat-hook-crossbar-at-x-height"
-g = "single-storey-flat-hook-serifless"
 
 [buildPlans.iosevka-fusion.variants.italic]
 f = "flat-hook-tailed-crossbar-at-x-height"
-g = "double-storey"
 
 [buildPlans.iosevka-fusion.weights.regular]
 shape = 400
