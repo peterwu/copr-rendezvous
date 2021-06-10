@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        7.0.2
+Version:        7.0.4
 Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
@@ -31,7 +31,18 @@ npm run build -- ttf::iosevka-fusion
 
 %install
 %__rm -rf %{buildroot}
-%__install -D -m 0644 %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/*.ttf -t %{buildroot}%{_datadir}/fonts/%{name}
+%__install -D -m 0644 \
+           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-regular.ttf \
+           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-Regular.ttf
+%__install -D -m 0644 \
+           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-italic.ttf \
+           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-Italic.ttf
+%__install -D -m 0644 \
+           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-bold.ttf \
+           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-Bold.ttf
+%__install -D -m 0644 \
+           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-bolditalic.ttf \
+           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-BoldItalic.ttf
 
 %clean
 %__rm -rf %{buildroot}
@@ -42,6 +53,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Thu Jun 10 04:35:18 PM EDT 2021 Peter Wu
+- Release 7.0.4
+
 * Mon May 31 09:45:20 AM EDT 2021 Peter Wu
 - Release 7.0.2
 
