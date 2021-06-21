@@ -5,7 +5,7 @@ serifs  = "sans"
 
 [buildPlans.iosevka-fusion.variants.design]
 capital-a = "curly-serifless"
-capital-g = "toothless-rounded-serifless-capped"
+capital-g = "toothed-serifless-capped"
 capital-j = "flat-hook-serifed-both-sides"
 capital-k = "curly-serifless"
 capital-q = "crossing-curly-tailed"
