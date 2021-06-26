@@ -5,7 +5,6 @@ serifs  = "sans"
 
 [buildPlans.iosevka-fusion.variants.design]
 capital-a = "curly-serifless"
-capital-g = "toothed-serifless-capped"
 capital-j = "flat-hook-serifed-both-sides"
 capital-k = "curly-serifless"
 capital-q = "crossing-curly-tailed"
@@ -47,15 +46,20 @@ seven = "curly-serifless"
 eight = "two-circles"
 nine  = "open-contour"
 
-asterisk   = "penta-low"
-underscore = "low"
-percent    = "rings-continuous-slash"
-question   = "corner-flat-hooked"
+asterisk        = "penta-low"
+underscore      = "low"
+percent         = "rings-continuous-slash"
+question        = "corner-flat-hooked"
+punctuation-dot = "square"
 
 [buildPlans.iosevka-fusion.variants.upright]
+capital-g = "toothed-serifless-capped"
+
 f = "flat-hook-crossbar-at-x-height"
 
 [buildPlans.iosevka-fusion.variants.italic]
+capital-g = "toothless-rounded-serifless-capped"
+
 f = "flat-hook-tailed-crossbar-at-x-height"
 
 [buildPlans.iosevka-fusion.weights.regular]
