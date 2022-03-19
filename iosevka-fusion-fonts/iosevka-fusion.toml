@@ -1,21 +1,24 @@
 [buildPlans.iosevka-fusion]
-family  = "Iosevka Fusion"
-spacing = "fixed"
-serifs  = "sans"
+family      = "Iosevka Fusion"
+spacing     = "fixed"
+serifs      = "sans"
+no-cv-ss    = false
+no-ligation = true
 
 [buildPlans.iosevka-fusion.variants.design]
 capital-j = "flat-hook-serifed-both-sides"
+capital-q = "crossing-curly-tailed"
 
 g = "single-storey-flat-hook-serifless"
 i = "serifed-flat-tailed"
 j = "flat-hook-serifed"
 l = "serifed-flat-tailed"
-t = "flat-hook"
+t = "flat-hook-short-neck"
 
 zero  = "slashed"
-one   = "nobase"
+one   = "no-base"
 two   = "curly-neck"
-three = "twoarcs"
+three = "two-arcs"
 four  = "closed"
 five  = "vertical-upper-left-bar"
 six   = "closed-contour"
@@ -61,8 +64,7 @@ shape = "italic"
 menu  = "italic"
 css   = "italic"
 
-
 [buildPlans.iosevka-fusion.widths.normal]
-shape = 576
+shape = 600
 menu  = 5
 css   = "normal"
