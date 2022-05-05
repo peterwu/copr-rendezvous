@@ -1,9 +1,9 @@
 %global         debug_package %{nil}
 
-%global         build_id 1649664637 
+%global         build_id 1651667301
 
 Name:           code
-Version:        1.66.2
+Version:        1.67.0
 Release:        1%{?dist}
 Summary:        Code editing. Redefined.
 License:        Multiple, see https://code.visualstudio.com/license
