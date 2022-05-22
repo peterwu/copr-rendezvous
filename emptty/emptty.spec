@@ -1,7 +1,7 @@
 %global         debug_package %{nil}
 
 Name:           emptty
-Version:        0.7.0
+Version:        0.8.0
 Release:        1%{?dist}
 Summary:        Dead simple CLI Display Manager on TTY
 
@@ -54,3 +54,6 @@ Dead simple CLI Display Manager on TTY
 %changelog
 * Sat 05 Mar 2022 03:46:10 PM EST
 - New Release - v0.7.0
+
+* Sun 22 May 2022 06:59:18 PM EDT
+- New Release - v0.8.0
