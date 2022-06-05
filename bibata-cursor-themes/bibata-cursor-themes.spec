@@ -3,12 +3,13 @@
 
 Name:           bibata-cursor-themes
 Version:        1.1.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Set
 
 License:        GNU General Public License v3.0
 URL:            https://github.com/ful1e5/Bibata_Cursor
 Source0:        %{url}/archive/v%{version}.tar.gz
+Source1:        %{url}/releases/download/v%{version}/bitmaps.zip
 
 BuildArch:      noarch
 
@@ -34,9 +35,14 @@ OpenSource, Compact and Material Designed Cursor Set
 
 %prep
 %autosetup -n %{source_name}-%{version}
+%__mkdir -p bitmaps
+%__unzip %{SOURCE1} -d bitmaps
 
 %build
-%__make unix
+pip install clickgen
+
+cd builder
+%__make build_unix
 
 %install
 %__rm -rf %{buildroot}
@@ -55,6 +61,9 @@ done
 %{_datadir}/icons/*
 
 %changelog
+* Sun 05 Jun 2022 07:54:12 PM EDT Peter Wu
+- Use bitmaps.zip to build
+
 * Mon Jul 12 09:44:23 AM EDT 2021 Peter Wu
 - New Release - v1.1.2
 
