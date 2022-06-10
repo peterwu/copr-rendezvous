@@ -1,9 +1,9 @@
 %global         debug_package %{nil}
 
-%global         build_id 1652812909
+%global         build_id 1654690163
 
 Name:           code
-Version:        1.67.2
+Version:        1.68.0
 Release:        1%{?dist}
 Summary:        Code editing. Redefined.
 License:        Multiple, see https://code.visualstudio.com/license
@@ -67,17 +67,20 @@ rpm2cpio %{_sourcedir}/%{name}-%{version}-%{build_id}.el7.x86_64.rpm|cpio -idmv 
 /opt/microsoft/%{name}/*
 
 %changelog
-* Wed 23 Mar 2022 09:24:32 PM EDT Peter Wu
-- Release v1.65.2
+* Thu 09 Jun 2022 08:04:50 PM EDT
+- Release v1.68.0
 
-* Wed Mar 30 14:59:04 EDT 2022 Peter Wu
-- Release v1.66.0
-
-* Thu 07 Apr 2022 05:57:07 PM EDT Peter Wu
-- Release v1.66.1
+* Sun 05 Jun 2022 04:52:28 PM EDT
+- Release v1.67.2
 
 * Tue May 10 15:07:38 EDT 2022 Peter Wu
 - Release v1.67.1
 
-* Sun 05 Jun 2022 04:52:28 PM EDT
-- Release v1.67.2
+* Thu 07 Apr 2022 05:57:07 PM EDT Peter Wu
+- Release v1.66.1
+
+* Wed Mar 30 14:59:04 EDT 2022 Peter Wu
+- Release v1.66.0
+
+* Wed 23 Mar 2022 09:24:32 PM EDT Peter Wu
+- Release v1.65.2
