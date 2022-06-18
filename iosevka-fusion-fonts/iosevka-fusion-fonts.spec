@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        15.0.2
+Version:        15.5.1
 Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
@@ -30,22 +30,10 @@ npm install
 npm run build -- ttf::iosevka-fusion
 
 %install
-%__rm -rf %{buildroot}
-%__install -D -m 0644 \
-           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-regular.ttf \
-           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-Regular.ttf
-%__install -D -m 0644 \
-           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-italic.ttf \
-           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-Italic.ttf
-%__install -D -m 0644 \
-           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-bold.ttf \
-           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-Bold.ttf
-%__install -D -m 0644 \
-           %{_builddir}/%{source_name}-%{version}/dist/iosevka-fusion/ttf/iosevka-fusion-bolditalic.ttf \
-           -T %{buildroot}%{_datadir}/fonts/%{name}/IosevkaFusion-BoldItalic.ttf
-
-%clean
-%__rm -rf %{buildroot}
+%__mkdir -p %{buildroot}%{_datadir}/fonts/%{name}
+%__install -m 0644 \
+           dist/iosevka-fusion/ttf/*.ttf \
+           -t %{buildroot}%{_datadir}/fonts/%{name}
 
 %files
 %license LICENSE.md
@@ -53,6 +41,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Sat 18 Jun 2022 04:02:10 PM EDT
+- Release 15.5.1
+
 * Fri 18 Mar 2022 11:15:57 PM EDT Peter Wu
 - Release 15.0.2
 
