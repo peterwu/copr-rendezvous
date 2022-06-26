@@ -10,7 +10,7 @@ cv03 = 1    # C cap serifless
 cv04 = 1    # D cap serifless
 cv05 = 1    # E cap serifless
 cv06 = 1    # F cap serifless
-cv07 = 4    # G cap toothed
+cv07 = 6    # G cap toothless rounded serifless hooked
 cv08 = 1    # H cap serifless
 cv09 = 1    # I cap long serifs
 cv10 = 2    # J cap serified
@@ -64,7 +64,7 @@ cv88 = 1    # # column straight
 cv90 = 4    # @ three-fold, tall height
 cv91 = 2    # $ dollar strike through
 cv92 = 2    # ¢ cent strike through
-cv93 = 3    # % percent rings continuous slash
+cv93 = 1    # % percent dots
 cv94 = 1    # | bar natural slope
 cv95 = 2    # ≥ equal-or-{higher,lower} slanted
 cv96 = 1    # ' single quote straight
@@ -178,6 +178,11 @@ menu  = "italic"
 css   = "italic"
 
 [buildPlans.iosevka-fusion.widths.normal]
-shape = 625
+shape = 576
 menu  = 5
 css   = "normal"
+
+[buildPlans.iosevka-fusion.metric-override]
+leading = 1450
+sb = 60
+xHeight = 550
