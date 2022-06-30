@@ -1,7 +1,7 @@
 %global         debug_package %{nil}
 
 Name:           emptty
-Version:        0.8.0
+Version:        0.8.1
 Release:        1%{?dist}
 Summary:        Dead simple CLI Display Manager on TTY
 
@@ -44,16 +44,19 @@ Dead simple CLI Display Manager on TTY
 %files
 %license LICENSE
 %doc README.md
-%{_sysconfdir}/emptty/conf
-%{_sysconfdir}/emptty/motd-gen.sh
-%{_mandir}/man1/emptty.1.gz
-%{_bindir}/emptty
-%{_sysconfdir}/pam.d/emptty
-/usr/lib/systemd/system/emptty.service
+%config(noreplace) %{_sysconfdir}/%{name}/conf
+%config(noreplace) %{_sysconfdir}/%{name}/motd-gen.sh
+%{_mandir}/man1/%{name}.1.gz
+%{_bindir}/%{name}
+%{_pam_confdir}/%{name}
+/usr/lib/systemd/system/%{name}.service
 
 %changelog
-* Sat 05 Mar 2022 03:46:10 PM EST
-- New Release - v0.7.0
+* Thu 30 Jun 2022 08:52:14 AM EDT
+- New Release v0.8.1
 
 * Sun 22 May 2022 06:59:18 PM EDT
 - New Release - v0.8.0
+
+* Sat 05 Mar 2022 03:46:10 PM EST
+- New Release - v0.7.0
