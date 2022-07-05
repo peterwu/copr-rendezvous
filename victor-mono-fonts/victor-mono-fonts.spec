@@ -1,7 +1,7 @@
 %global         debug_package %{nil}
 
 Name:           victor-mono-fonts
-Version:        1.5.3
+Version:        1.5.4
 Release:        1%{?dist}
 Summary:        A free programming font with cursive italics and ligatures.
 
@@ -33,8 +33,11 @@ cursive italics and programming symbol ligatures.
 %{_datadir}/fonts/victor-mono-fonts/*
 
 %changelog
-* Sat 19 Mar 2022 12:00:08 PM EDT Peter Wu
-- Release - v1.5.2
+* Tue 05 Jul 2022 12:38:47 PM EDT
+- Release v1.5.4
 
 * Wed May 18 21:45:04 EDT 2022 Peter Wu
 - Release v1.5.3
+
+* Sat 19 Mar 2022 12:00:08 PM EDT Peter Wu
+- Release - v1.5.2
