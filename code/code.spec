@@ -1,9 +1,9 @@
 %global         debug_package %{nil}
 
-%global         build_id 1655263151
+%global         build_id 1657183798
 
 Name:           code
-Version:        1.68.1
+Version:        1.69.0
 Release:        1%{?dist}
 Summary:        Code editing. Redefined.
 License:        Multiple, see https://code.visualstudio.com/license
@@ -67,6 +67,9 @@ rpm2cpio %{_sourcedir}/%{name}-%{version}-%{build_id}.el7.x86_64.rpm|cpio -idmv 
 /opt/microsoft/%{name}/*
 
 %changelog
+* Thu Jul  7 18:35:18 EDT 2022
+- Release v1.69.0
+
 * Wed Jun 15 18:10:47 EDT 2022
 - Release v1.68.1
 
