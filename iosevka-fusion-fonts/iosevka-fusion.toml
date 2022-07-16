@@ -2,6 +2,7 @@
 family      = "Iosevka Fusion"
 spacing     = "fixed"
 serifs      = "sans"
+no-cv-ss    = true
 
 [buildPlans.iosevka-fusion.variants.design]
 cv01 = 1    # A cap straight
@@ -96,7 +97,7 @@ cv89 = 2    # & et open top (ampersand)
 
 [buildPlans.iosevka-fusion.variants.italic]
 cv30 = 2    # e curly
-cv31 = 19   # f flat hook extended crossbar at x height
+cv31 = 18   # f flat hook tailed crossbar at x height
 cv32 = 7    # g single storey flat hook
 cv36 = 2    # k curly
 cv38 = 1    # m straight normal middle leg
@@ -178,11 +179,11 @@ menu  = "italic"
 css   = "italic"
 
 [buildPlans.iosevka-fusion.widths.normal]
-shape = 576
+shape = 600
 menu  = 5
 css   = "normal"
 
 [buildPlans.iosevka-fusion.metric-override]
-leading = 1450
+leading = 1350
 sb = 60
-xHeight = 550
+xHeight = 530
