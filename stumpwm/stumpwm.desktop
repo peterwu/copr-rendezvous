@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=StumpWM
+Comment=A tiling, keyboard driven X11 Window Manager written entirely in Common Lisp
+TryExec=stumpwm
+Exec=stumpwm
+Type=Application
+
+[X-Window Manager]
+SessionManaged=true
