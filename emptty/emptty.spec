@@ -1,7 +1,7 @@
 %global         debug_package %{nil}
 
 Name:           emptty
-Version:        0.8.1
+Version:        0.9.0
 Release:        1%{?dist}
 Summary:        Dead simple CLI Display Manager on TTY
 
@@ -52,6 +52,9 @@ Dead simple CLI Display Manager on TTY
 /usr/lib/systemd/system/%{name}.service
 
 %changelog
+* Tue 30 Aug 2022 12:39:22 PM EDT
+- New Release v0.9.0
+
 * Thu 30 Jun 2022 08:52:14 AM EDT
 - New Release v0.8.1
 
