@@ -3,7 +3,7 @@
 %global         source_name clion
 
 Name:           jetbrains-clion
-Version:        2022.1.3
+Version:        2022.2.3
 Release:        1%{?dist}
 Summary:        JetBrains' C/C++ IDE.
 
@@ -41,8 +41,11 @@ JetBrains' cross platform C/C++ IDE.
 %{__rm} -rf lib/pty4j-native/linux/aarch64
 %{__rm} -rf lib/pty4j-native/linux/x86
 
+%{__rm} -rf jbr/lib/libjceftesthelpers.so
 %{__rm} -rf plugins/performanceTesting/bin/libyjpagent.so
 %{__rm} -rf plugins/python-ce/helpers/pydev/pydevd_attach_to_process/attach_linux_x86.so
+
+%{__rm} -rf plugins/gateway-plugin
 
 find bin -type f -name '*.py' -exec sed -i '1 s/env python/python3/' {} \;
 
@@ -62,6 +65,9 @@ find bin -type f -name '*.py' -exec sed -i '1 s/env python/python3/' {} \;
 /opt/jetbrains/clion/*
 
 %changelog
+* Sat 17 Sep 2022 02:38:33 PM EDT
+- CLion-2022.2.3
+
 * Sat 02 Jul 2022 05:10:29 PM EDT
 - CLion-2022.1.3
 
