@@ -1,7 +1,7 @@
 %global debug_package %{nil}
 
 Name:           zutty
-Version:        0.12
+Version:        0.13
 Release:        1%{?dist}
 Summary:        X terminal emulator rendering through OpenGL ES Compute Shaders
 License:        GNU General Public License v3.0
@@ -54,8 +54,12 @@ python ./waf --destdir=%{buildroot} install
 %{_datadir}/icons/hicolor/*
 
 %changelog
-* Fri 18 Mar 2022 09:04:43 PM EDT Peter Wu
-- Release v0.11
+* Tue Nov 15 09:20:12 PM EST 2022
+- Release v0.13
 
 * Thu 02 Jun 2022 10:34:55 PM EDT Peter Wu
 - Release v0.12
+
+* Fri 18 Mar 2022 09:04:43 PM EDT Peter Wu
+- Release v0.11
+
