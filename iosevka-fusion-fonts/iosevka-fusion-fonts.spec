@@ -2,8 +2,8 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        16.3.6
-Release:        2%{?dist}
+Version:        16.8.4
+Release:        1%{?dist}
 Summary:        A custom font based on iosevka
 
 License:        SIL Open Font License Version 1.1
@@ -138,6 +138,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Fri 23 Dec 2022 12:42:31 PM EST
+- Release 16.8.4
+
 * Sun 18 Dec 2022 09:49:30 PM EST
 - Rename fonts using Pascal naming convention
 
