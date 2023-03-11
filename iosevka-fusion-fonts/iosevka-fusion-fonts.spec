@@ -2,9 +2,9 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        19.0.1
+Version:        20.0.0
 Release:        1%{?dist}
-Summary:        A custom font based on iosevka
+Summary:        A custom font based on Iosevka
 
 License:        SIL Open Font License Version 1.1
 URL:            https://github.com/be5invis/Iosevka
@@ -13,8 +13,12 @@ Source1:        iosevka-fusion.toml
 
 BuildArch:      noarch
 
-BuildRequires:  clang
+%if 0%{?fedora} == 36
 BuildRequires:  npm
+%else
+BuildRequires:  nodejs-npm
+%endif
+
 BuildRequires:  ttfautohint
 
 %description
@@ -138,6 +142,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Sat 11 Mar 2023 05:17:16 PM EST
+- Release 20.0.0
+
 * Sat 04 Mar 2023 11:46:34 AM EST
 - Release 19.0.1
 
