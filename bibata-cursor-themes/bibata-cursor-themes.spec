@@ -12,8 +12,13 @@ Source0:        %{url}/archive/v%{version}.tar.gz
 
 BuildArch:      noarch
 
-BuildRequires:  make
+%if 0%{?fedora} == 36
 BuildRequires:  npm
+%else
+BuildRequires:  nodejs-npm
+%endif
+
+BuildRequires:  make
 BuildRequires:  yarnpkg
 BuildRequires:  python3
 BuildRequires:  python3-pip
