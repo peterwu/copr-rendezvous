@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           iosevka-fusion-fonts
-Version:        21.1.1
+Version:        22.1.2
 Release:        1%{?dist}
 Summary:        A custom font based on Iosevka
 
@@ -13,12 +13,7 @@ Source1:        iosevka-fusion.toml
 
 BuildArch:      noarch
 
-%if 0%{?fedora} == 36
-BuildRequires:  npm
-%else
 BuildRequires:  nodejs-npm
-%endif
-
 BuildRequires:  ttfautohint
 
 %description
@@ -142,6 +137,9 @@ npm run build -- ttf::iosevka-fusion
 %{_datadir}/fonts/*
 
 %changelog
+* Sun 21 May 2023 08:47:20 AM EDT
+- Release 22.1.2
+
 * Wed 29 Mar 2023 09:53:22 PM EDT
 - Release 21.1.1
 
