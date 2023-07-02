@@ -1,0 +1,23 @@
+diff --git a/src/ipc-server.cpp b/src/ipc-server.cpp
+index bdf1b92..19ff44a 100644
+--- a/src/ipc-server.cpp
++++ b/src/ipc-server.cpp
+@@ -4,6 +4,7 @@
+ #include <X11/Xlib.h>
+ #include <X11/Xutil.h>
+ #include <cstdio>
++#include <limits>
+ 
+ #include "ipc-protocol.h"
+ #include "xconnection.h"
+diff --git a/src/floating.cpp b/src/floating.cpp
+index e56d17a..7818253 100644
+--- a/src/floating.cpp
++++ b/src/floating.cpp
+@@ -1,5 +1,6 @@
+ #include "floating.h"
+ 
++#include <limits>
+ #include <algorithm>
+ #include <climits>
+ #include <cstdlib>
