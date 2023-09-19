@@ -2,35 +2,19 @@
 %global         debug_package %{nil}
 
 Name:           bibata-cursor-themes
-Version:        2.0.3
+Version:        2.0.4
 Release:        1%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Set
 
 License:        GNU General Public License v3.0
 URL:            https://github.com/ful1e5/Bibata_Cursor
-Source0:        %{url}/archive/v%{version}.tar.gz
+Source:         %{url}/archive/v%{version}.tar.gz
+Source1:        %{url}/releases/download/v%{version}/bitmaps.zip
 
 BuildArch:      noarch
 
-%if 0%{?fedora} == 36
-BuildRequires:  npm
-%else
-BuildRequires:  nodejs-npm
-%endif
-
-BuildRequires:  make
-BuildRequires:  yarnpkg
 BuildRequires:  python3
 BuildRequires:  python3-pip
-BuildRequires:  python3-virtualenv
-BuildRequires:  libX11-xcb
-BuildRequires:  libX11-devel
-BuildRequires:  libXcursor-devel
-BuildRequires:  libpng-devel
-BuildRequires:  gtk3-devel
-BuildRequires:  nss
-BuildRequires:  mesa-libgbm
-BuildRequires:  alsa-lib
 
 Requires:       gtk3
 
@@ -38,19 +22,35 @@ Requires:       gtk3
 OpenSource, Compact and Material Designed Cursor Set
 
 %prep
-%autosetup -n %{source_name}-%{version}
+%autosetup -c
+%autosetup -T -D -a 1
+
+mv bitmaps %{source_name}-%{version}
 
 %build
+export PATH="/builddir/.local/bin:$PATH"
 pip install clickgen
-pip install attrs
 
-yarn build
+cd %{source_name}-%{version}
+
+declare -A names
+names["Bibata-Modern-Amber"]="Yellowish and rounded edge Bibata cursors."
+names["Bibata-Modern-Classic"]="Black and rounded edge Bibata cursors."
+names["Bibata-Modern-Ice"]="White and rounded edge Bibata cursors."
+names["Bibata-Original-Amber"]="Yellowish and sharp edge Bibata cursors."
+names["Bibata-Original-Classic"]="Black and sharp edge Bibata cursors."
+names["Bibata-Original-Ice"]="White and sharp edge Bibata cursors."
+
+for key in "${!names[@]}"; do
+  comment="${names[$key]}"
+  ctgen build.toml -p x11 -d "bitmaps/$key" -n "$key" -c "$comment"
+done
 
 %install
 %__rm -rf %{buildroot}
 %__mkdir -p %{buildroot}%{_datadir}/icons
-for theme in $(ls %{_builddir}/%{source_name}-%{version}/themes); do
-  %__mv %{_builddir}/%{source_name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
+for theme in $(ls %{_builddir}/%{name}-%{version}/%{source_name}-%{version}/themes); do
+  %__mv %{_builddir}/%{name}-%{version}/%{source_name}-%{version}/themes/${theme} %{buildroot}%{_datadir}/icons
   %__chmod 0755 %{buildroot}%{_datadir}/icons/${theme}
 done
 
@@ -58,11 +58,14 @@ done
 %__rm -rf %{buildroot}
 
 %files
-%license LICENSE
-%doc README.md
+%license %{source_name}-%{version}/LICENSE
+%doc %{source_name}-%{version}/README.md
 %{_datadir}/icons/*
 
 %changelog
+* Sat 16 Dec 2023 05:38:01 PM EST
+- New Release - v2.0.4
+
 * Tue 06 Dec 2022 09:17:20 AM EST
 - New Release - v2.0.3
 
