@@ -2,7 +2,7 @@
 %global         debug_package %{nil}
 
 Name:           bibata-cursor-themes
-Version:        2.0.4
+Version:        2.0.5
 Release:        1%{?dist}
 Summary:        OpenSource, Compact and Material Designed Cursor Set
 
@@ -63,6 +63,9 @@ done
 %{_datadir}/icons/*
 
 %changelog
+* Sun 31 Dec 2023 09:51:50 AM EST
+- New Release - v2.0.5
+
 * Sat 16 Dec 2023 05:38:01 PM EST
 - New Release - v2.0.4
 
