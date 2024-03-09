@@ -23,7 +23,7 @@ t = "flat-hook"
 y = "cursive-flat-hook-serifless"
 
 zero = "oval-slashed-split"
-five = "oblique-arched"
+five = "oblique-arched-serifless"
 eight = "crossing-asymmetric"
 
 diacritic-dot = "square"
@@ -57,8 +57,8 @@ q = "earless-corner-straight-serifless"
 u = "toothless-corner-serifless"
 
 one = "base"
-two = "straight-neck"
-four = "semi-open"
+two = "straight-neck-serifless"
+four = "semi-open-serifless"
 six = "straight-bar"
 nine = "straight-bar"
 
@@ -75,8 +75,8 @@ x = "curly-serifless"
 z = "curly-serifless"
 
 one = "no-base"
-two = "curly-neck"
-four = "closed"
+two = "curly-neck-serifless"
+four = "closed-serifless"
 six = "closed-contour"
 nine = "closed-contour"
 
